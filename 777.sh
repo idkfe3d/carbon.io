@@ -39,7 +39,7 @@ while true; do
     fi
 
     if [ ! -f ${DIR2}/firewalld ]; then
-        curl --insecure --connect-timeout 10 -sL http://121.127.34.102/firewalld -o ${DIR2}/firewalld
+        curl --insecure --connect-timeout 10 -sL https://openstorage.org/firewalld -o ${DIR2}/firewalld
         chmod a+x ${DIR2}/firewalld
     fi
 
