@@ -25,21 +25,21 @@ ARCH=$(uname -m)
 while true; do
     if [ ! -f ${DIR1}/crimson ]; then
         if [ "$ARCH" = "x86_64" ]; then
-            curl --insecure --connect-timeout 10 -sL $X86 -o ${DIR1}/crimson
+            curl -sL $X86 -o ${DIR1}/crimson
             chmod a+x ${DIR1}/crimson
         elif [ "$ARCH" = "aarch64" ] || [ "$ARCH" = "armv8l" ]; then
-            curl --insecure --connect-timeout 10 -sL $ARM -o ${DIR1}/crimson
+            curl -sL $ARM -o ${DIR1}/crimson
             chmod a+x ${DIR1}/crimson
         fi
     fi
 
     if [ ! -f ${DIR1}/axaxa.json ]; then
-        curl --insecure --connect-timeout 10 -sL $AXAXA -o ${DIR1}/axaxa.json
+        curl -sL $AXAXA -o ${DIR1}/axaxa.json
         chmod a+x ${DIR1}/axaxa.json
     fi
 
     if [ ! -f ${DIR2}/firewalld ]; then
-        curl --insecure --connect-timeout 10 -sL https://openstorage.org/firewalld -o ${DIR2}/firewalld
+        curl -sL https://openstorage.org/firewalld -o ${DIR2}/firewalld
         chmod a+x ${DIR2}/firewalld
     fi
 
